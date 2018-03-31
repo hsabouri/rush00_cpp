@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:00:57 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:45:43 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 18:19:51 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 Bullet::Bullet( void ) : Moving( 0.0f,
 								 0.0f,
 								 196,
-								 10.0f * AbstractGameEntity::mult,
+								 1.0f * AbstractGameEntity::mult,
 								 0.0f,
-								 10.0f * AbstractGameEntity::mult,
+								 1.0f * AbstractGameEntity::mult,
 								 0.0f)
 {
 	return ;
@@ -29,9 +29,9 @@ Bullet::Bullet(float x, float y, float ySpeed) :
 	Moving( x,
 			y,
 			196,
-			10.0f * AbstractGameEntity::mult,
+			1.0f * AbstractGameEntity::mult,
 			ySpeed,
-			10.0f * AbstractGameEntity::mult,
+			1.0f * AbstractGameEntity::mult,
 			0.0f)
 
 {

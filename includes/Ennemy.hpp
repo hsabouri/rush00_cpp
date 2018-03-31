@@ -6,7 +6,11 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:24:53 by hsabouri          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/03/31 18:40:47 by jde-maga         ###   ########.fr       */
+=======
+/*   Updated: 2018/03/31 18:15:22 by hsabouri         ###   ########.fr       */
+>>>>>>> c068c1222cc2f015b99a247d74404a1e6268a6c5
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +30,8 @@ class Ennemy : public Moving {
 
 		void		movement( void );
 		void		scroll( float amount );
+
+		void		collide( Bullet **bullets );
 };
 
 #endif
