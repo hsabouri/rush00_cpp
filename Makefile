@@ -6,7 +6,7 @@
 #    By: jde-maga <jde-maga@stduent.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/31 11:38:54 by hsabouri          #+#    #+#              #
-#    Updated: 2018/03/31 16:32:55 by hsabouri         ###   ########.fr        #
+#    Updated: 2018/03/31 17:44:27 by hsabouri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,15 @@ SRCDIR = sources
 OBJDIR = objs
 INCDIR = includes
 
-SRCNAM = main.cpp AbstractGameEntity.cpp Moving.cpp
-INCNAM = AbstractGameEntity.hpp Moving.hpp
+SRCNAM = main.cpp \
+		 AbstractGameEntity.cpp \
+		 Moving.cpp \
+		 Ennemy.cpp \
+		 Bullet.cpp
+INCNAM = AbstractGameEntity.hpp \
+		 Moving.hpp \
+		 Ennemy.hpp \
+		 Bullet.hpp
 
 CC=g++
 CFLAGS=-Wall -Wextra -Werror -I$(INCDIR) -std=c++98 -pedantic

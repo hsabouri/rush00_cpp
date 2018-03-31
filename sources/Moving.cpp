@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 15:13:42 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 16:40:18 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 17:43:33 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 Moving::Moving( void ) : AbstractGameEntity(),
 	_xSpeed(0.0f), _ySpeed(0.0f),
 	_maxSpeed(1.0f * AbstractGameEntity::mult),
-	_drag(0.1f)
+	_drag(0.1f * AbstractGameEntity::mult)
 {
 	return ;
 }
@@ -34,7 +34,7 @@ Moving::Moving( float x, float y, unsigned char skin, float xSpeed, float ySpeed
 }
 
 Moving::Moving( Moving const & src ) :
-	AbstractGameEntity(src.getPosX(), src.getPosY(), src.getSkin()),
+	AbstractGameEntity(src),
 	_xSpeed(src.getSpeedX()), _ySpeed(src.getSpeedY()),
 	_maxSpeed(src.getMaxSpeed()),
 	_drag(src.getDrag())
@@ -83,6 +83,11 @@ void			Moving::setSpeeds( float x, float y ) {
 	} else {
 		this->_ySpeed = y;
 	}
+	return ;
+}
+
+void			Moving::setMaxSpeed( float max ) {
+	this->_maxSpeed = max;
 	return ;
 }
 
