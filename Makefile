@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#    Makefile                                             :::      ::::::::    #
-#                                                       :+:      :+:    :+:    #
-#    By: hsabouri <hsabouri@student.42.fr>            +:+ +:+         +:+      #
-#    By: jde-maga <jde-maga@stduent.42.fr>          +#+  +:+       +#+         #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/31 11:38:54 by hsabouri          #+#    #+#              #
-#    Updated: 2018/03/31 17:44:27 by hsabouri         ###   ########.fr        #
+#    Updated: 2018/03/31 17:52:45 by jde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,16 @@ SRCNAM = main.cpp \
 		 AbstractGameEntity.cpp \
 		 Moving.cpp \
 		 Ennemy.cpp \
-		 Bullet.cpp
+		 Bullet.cpp \
+		 Window.cpp
 INCNAM = AbstractGameEntity.hpp \
+		 Window.hpp \
 		 Moving.hpp \
 		 Ennemy.hpp \
 		 Bullet.hpp
 
 CC=g++
-CFLAGS=-Wall -Wextra -Werror -I$(INCDIR) -std=c++98 -pedantic
+CFLAGS=-Wall -Wextra -I$(INCDIR) -std=c++98 -pedantic
 LDFLAGS=
 
 SRC=$(SRCNAM:%=$(SRCDIR)/%)
@@ -40,7 +42,7 @@ all:
 	@$(MAKE) $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) -o $@ $^ $(LDFLAGS)
+	@$(CC) -lncurses -o $@ $^ $(LDFLAGS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INC)
 	@mkdir -p $(OBJDIR)

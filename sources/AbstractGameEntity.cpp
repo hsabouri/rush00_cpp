@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractGameEntity.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 13:40:08 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 15:14:39 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 17:05:34 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AbstractGameEntity.hpp"
+#include <AbstractGameEntity.hpp>
 
 // Static attributes
 

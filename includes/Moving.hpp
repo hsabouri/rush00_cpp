@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Moving.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 14:48:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:42:27 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 19:11:57 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ class Moving : public AbstractGameEntity {
 		float			getSpeedY( void ) const;
 		float			getDrag( void ) const;
 		float			getMaxSpeed( void ) const;
+		void			setMaxSpeed( float max );
 		float			getCurrentSpeed( void ) const;
 
 		virtual void	movement( void );
 
 	protected:
 		void		setSpeeds( float x, float y );
-		void		setMaxSpeed( float max );
 		void		modSpeeds( float x, float y );
 		
 		void		drag( void );

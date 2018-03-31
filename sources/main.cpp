@@ -1,12 +1,16 @@
-#include "AbstractGameEntity.hpp"
-#include "Moving.hpp"
-#include <iostream>
+#include <Ennemy.hpp>
+#include <Window.hpp>
 
 int main(void) {
-	Moving yolo(50.0f, 50.0f, 254, 10.0f, 0.0f, 10.0f, 1.0f);
+	
+	Window win = Window();
 
-	std::cout << yolo.getSpeedX() << " - " << yolo.getSpeedY() << std::endl;
-	yolo.movement();
-	std::cout << yolo.getSpeedX() << " - " << yolo.getSpeedY() << std::endl;
-	yolo.movement();
+	Ennemy en = Ennemy(10.0f, 10.0f, 0.0f, 5.0f);
+
+	win.init();
+	int i;
+
+	while (1) {
+		win.refresh();
+	}
 }
