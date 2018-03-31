@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 12:44:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 14:04:18 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 14:34:00 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class AbstractGameEntity {
 
 		static int		width;
 		static int		height;
+		static float	mult;
 
 		void			display( void ) const;
 
@@ -40,10 +41,11 @@ class AbstractGameEntity {
 		Status			getStatus( void ) const;
 
 	protected:
-		void			setChar( unsigned char newChar );
-		void			setStatus( Status newStatus );
 		void			setPos( float x, float y );
 		void			modPos( float x, float y );
+
+		void			setSkin( unsigned char skin );
+		void			setStatus( Status newStatus );
 
 		virtual void	scroll( float amount );
 
