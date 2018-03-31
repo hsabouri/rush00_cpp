@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 14:48:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:42:27 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 18:31:56 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class Moving : public AbstractGameEntity {
 		float			getSpeedY( void ) const;
 		float			getDrag( void ) const;
 		float			getMaxSpeed( void ) const;
-		float			getCurrentSpeed( void ) const;
 
 		virtual void	movement( void );
 
@@ -37,6 +36,7 @@ class Moving : public AbstractGameEntity {
 		void		modSpeeds( float x, float y );
 		
 		void		drag( void );
+		// Slows down the entity
 
 	private:
 		float		_xSpeed;

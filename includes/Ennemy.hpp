@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:24:53 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:40:04 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 18:15:22 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Ennemy : public Moving {
 
 		void		movement( void );
 		void		scroll( float amount );
+
+		void		collide( Bullet **bullets );
 };
 
 #endif
