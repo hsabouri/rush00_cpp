@@ -1,5 +1,5 @@
-#include "sample.h"
+#include "AbstractGameEntity.hpp"
 
 int main(void) {
-	sample();
+	AbstractGameEntity yolo;
 }

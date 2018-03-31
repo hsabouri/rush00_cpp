@@ -6,7 +6,7 @@
 #    By: jde-maga <jde-maga@stduent.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/31 11:38:54 by hsabouri          #+#    #+#              #
-#    Updated: 2018/03/31 12:43:27 by hsabouri         ###   ########.fr        #
+#    Updated: 2018/03/31 13:59:21 by hsabouri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ SRCDIR = sources
 OBJDIR = objs
 INCDIR = includes
 
-SRCNAM = main.cpp
-INCNAM = 
+SRCNAM = main.cpp AbstractGameEntity.cpp
+INCNAM = AbstractGameEntity.hpp
 
 CC=g++
 CFLAGS=-Wall -Wextra -Werror -I$(INCDIR) -std=c++98 -pedantic
