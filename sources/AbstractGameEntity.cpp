@@ -6,7 +6,7 @@
 /*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 13:40:08 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 14:35:23 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/03/31 15:14:39 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,3 @@ void			AbstractGameEntity::setStatus( Status newStatus ) {
 	this->_status = newStatus;
 	return ;
 }
-
-//TODO display member function
