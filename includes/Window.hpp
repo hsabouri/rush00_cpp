@@ -1,5 +1,7 @@
 # include <ncurses.h>
 
+#include <Bullet.hpp>
+
 #ifndef WINDOW_CLASS_HPP
 # define WINDOW_CLASS_HPP
 
@@ -17,6 +19,7 @@ public:
 
 private:
     WINDOW *win;
+
 };
 
 #endif

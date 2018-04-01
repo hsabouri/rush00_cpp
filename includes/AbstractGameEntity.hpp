@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractGameEntity.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 12:44:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:00:30 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/04/01 07:56:42 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <string>
 
 #ifndef  ABSTRACTGAMEENTITY_HPP
 # define ABSTRACTGAMEENTITY_HPP
@@ -22,7 +24,7 @@ enum Status {
 class AbstractGameEntity {
 
 	public:
-		AbstractGameEntity( float x, float y, unsigned char skin );
+		AbstractGameEntity( float x, float y, char *skin );
 		AbstractGameEntity( void );
 		AbstractGameEntity( AbstractGameEntity const & src);
 		AbstractGameEntity & operator=( AbstractGameEntity const & rhs );
@@ -35,27 +37,29 @@ class AbstractGameEntity {
 
 		int				getIntPosX( void ) const;
 		int				getIntPosY( void ) const;
+		int 			getOldX(void);
+		int 			getOldY(void);
+		void			saveCoords(int x, int y);
 		float			getPosX( void ) const;
 		float			getPosY( void ) const;
-		unsigned char	getSkin( void ) const;
+		char *			getSkin( void ) const;
 		Status			getStatus( void ) const;
 
 	protected:
 		void			setPos( float x, float y );
 		void			modPos( float x, float y );
 
-		void			setSkin( unsigned char skin );
+		void			setSkin( char *skin );
 		void			setStatus( Status newStatus );
 
-		virtual void	scroll( float amount );
-
+		virtual void	myscroll( float amount );
 	private:
+		int oldX;
+		int oldY;
 		float			_xPos;
 		float			_yPos;
-
 		Status			_status;
-
-		unsigned char	_skin;
+		char *	_skin;
 };
 
 #endif

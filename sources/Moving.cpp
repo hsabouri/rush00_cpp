@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Moving.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 15:13:42 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:43:33 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/04/01 07:57:03 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Moving::Moving( void ) : AbstractGameEntity(),
 	return ;
 }
 
-Moving::Moving( float x, float y, unsigned char skin, float xSpeed, float ySpeed, float max, float drag ) :
+Moving::Moving( float x, float y, char *skin, float xSpeed, float ySpeed, float max, float drag ) :
 	AbstractGameEntity(x, y, skin),
 	_xSpeed(xSpeed * AbstractGameEntity::mult),
 	_ySpeed(ySpeed * AbstractGameEntity::mult),

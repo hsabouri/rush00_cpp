@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 13:40:08 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 17:05:34 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 07:56:26 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 // Static attributes
 
-int		AbstractGameEntity::width = 0;
-int		AbstractGameEntity::height = 0;
+int		AbstractGameEntity::width = 40;
+int		AbstractGameEntity::height = 200;
 float	AbstractGameEntity::mult = 1;
 
 // Coplien
@@ -23,12 +23,12 @@ float	AbstractGameEntity::mult = 1;
 AbstractGameEntity::AbstractGameEntity( void ) : 
 	_xPos(0), _yPos(0),
 	_status(alive),
-	_skin(254)
+	_skin((char *)".")
 {
 	return ;
 }
 
-AbstractGameEntity::AbstractGameEntity( float x, float y, unsigned char skin ) :
+AbstractGameEntity::AbstractGameEntity( float x, float y, char *skin ) :
 	_xPos(x), _yPos(y),
 	_status(alive),
 	_skin(skin)
@@ -54,7 +54,7 @@ AbstractGameEntity & AbstractGameEntity::operator=( AbstractGameEntity const & r
 
 // Member functions
 
-void			AbstractGameEntity::scroll( float amount ) {
+void			AbstractGameEntity::myscroll( float amount ) {
 	(void)amount;
 	return ;
 }
@@ -79,7 +79,7 @@ Status			AbstractGameEntity::getStatus( void ) const {
 	return this->_status;
 }
 
-unsigned char	AbstractGameEntity::getSkin( void ) const {
+char	*AbstractGameEntity::getSkin( void ) const {
 	return this->_skin;
 }
 
@@ -99,7 +99,7 @@ void			AbstractGameEntity::modPos( float x, float y ) {
 	return ;
 }
 
-void			AbstractGameEntity::setSkin( unsigned char skin ) {
+void			AbstractGameEntity::setSkin( char *skin ) {
 	this->_skin = skin;
 	return ;
 }
@@ -107,4 +107,16 @@ void			AbstractGameEntity::setSkin( unsigned char skin ) {
 void			AbstractGameEntity::setStatus( Status newStatus ) {
 	this->_status = newStatus;
 	return ;
+}
+
+void			AbstractGameEntity::saveCoords(int x, int y) {
+	this->oldX = x;
+	this->oldY = y;
+}
+
+int				AbstractGameEntity::getOldX( void ) {
+	return this->oldX;
+}
+int				AbstractGameEntity::getOldY( void ) {
+	return this->oldY;
 }

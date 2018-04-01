@@ -1,33 +1,29 @@
-#include <Window.hpp>
 #include <Moving.hpp>
+#include <Bullet.hpp>
+#include <Window.hpp>
 
 #ifndef PLAYER_CLASS_HPP
 # define PLAYER_CLASS_HPP
 
 class Player : public Moving {
 public:
-    Player();
+    Player( void );
+    Player( float x, float y );
     Player(const Player &src);
     ~Player();
     Player &operator=(const Player &src);
 
-    void movement();
-    void input(Window *win);
-    int getX();
-    int getY();
-    void shoot();
-
+    void input(Window &win);
     float getXShooting(void) const;
     float getYShooting(void) const;
     float getShooting(void) const;
 
-private:
-    int x;
-    int y;
+    void moveBullet( void );
 
-    float _shootingSpeed;
-    float _xShooting;
-    float _yShooting;
+    void	movement( void );
+
+    Bullet *bullet;
+    bool bullet_ok;
 };
 
 #endif

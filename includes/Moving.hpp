@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 14:48:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 19:17:27 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 07:56:55 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Moving : public AbstractGameEntity {
 
 	public:
-		Moving( float x, float y, unsigned char skin, float xSpeed, float ySpeed, float max, float drag );
+		Moving( float x, float y, char *skin, float xSpeed, float ySpeed, float max, float drag );
 		Moving( void );
 		Moving( Moving const & src);
 		Moving & operator=( Moving const & rhs );

@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 16:48:15 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/03/31 18:40:41 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 06:35:48 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "AbstractGameEntity.hpp"
 # include "Moving.hpp"
+#include <Window.hpp>
 
 class Bullet : public Moving {
 
@@ -25,7 +26,8 @@ class Bullet : public Moving {
 		Bullet & operator=( Bullet const & rhs );
 
 		void		movement( void );
-		void		scroll( float amount );
+		void		myscroll( float amount );
+		void		remove_self(Window &win);
 };
 
 #endif

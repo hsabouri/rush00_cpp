@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <Window.hpp>
+#include <Bullet.hpp>
 
 Window::Window(void) {
 }
@@ -21,6 +22,7 @@ void Window::init(void) {
 	initscr();                                                       
 	cbreak();
 	noecho();
+	nodelay(stdscr, true);
 	curs_set(0);
 	scrollok(stdscr, TRUE);
 	init_main_window();
