@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:26:10 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 07:59:38 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 19:38:06 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 Ennemy::Ennemy( void ) :
 	Moving( 0.0f,
 			0.0f,
-			(char *)"E",
+			(char *)"«",
 			-1.0f * AbstractGameEntity::mult,
 			0.0f,
-			10.0f * AbstractGameEntity::mult,
+			1.0f * AbstractGameEntity::mult,
+			0.7f * AbstractGameEntity::mult,
 			0.0f)
 {
 	return ;
@@ -32,10 +33,11 @@ Ennemy::Ennemy( void ) :
 Ennemy::Ennemy( float x, float y, float xSpeed, float ySpeed ) :
 	Moving( x,
 			y,
-			(char *)"E",
+			(char *)"«",
 			xSpeed,
 			ySpeed,
-			10.0f * AbstractGameEntity::mult,
+			1.0f * AbstractGameEntity::mult,
+			0.7f * AbstractGameEntity::mult,
 			0.0f)
 {
 	this->setSpeeds(xSpeed, ySpeed);
@@ -43,6 +45,10 @@ Ennemy::Ennemy( float x, float y, float xSpeed, float ySpeed ) :
 }
 
 Ennemy::Ennemy( Ennemy const & src ) : Moving(src) {
+	return ;
+}
+
+Ennemy::~Ennemy( void ) {
 	return ;
 }
 
@@ -63,11 +69,9 @@ int 	Ennemy::collide(Bullet **bullets, size_t size) {
 		int bullet_pos_x = bullets[i]->getIntPosX();
 		int bullet_pos_y = bullets[i]->getIntPosY();
 
-		if (this_pos_x == bullet_pos_x && this_pos_y < bullet_pos_y + 1 && this_pos_x > bullet_pos_y - 1) {
+		if (this_pos_x == bullet_pos_x && this_pos_y == bullet_pos_y) {
 			this->setStatus(dying);
 			touched = i;
-			delete bullets[i];
-			bullets[i] = NULL;
 			break;
 		}
 	}

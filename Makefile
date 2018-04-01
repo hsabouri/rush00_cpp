@@ -6,7 +6,7 @@
 #    By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/31 11:38:54 by hsabouri          #+#    #+#              #
-#    Updated: 2018/04/01 03:27:57 by jde-maga         ###   ########.fr        #
+#    Updated: 2018/04/01 12:05:29 by hsabouri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,16 +22,18 @@ SRCNAM = main.cpp \
 		 Ennemy.cpp \
 		 Bullet.cpp \
 		 Window.cpp \
-		 Player.cpp
+		 Player.cpp \
+		 lib.cpp
 INCNAM = AbstractGameEntity.hpp \
 		 Window.hpp \
 		 Moving.hpp \
 		 Ennemy.hpp \
 		 Bullet.hpp \
-		 Player.hpp
-
+		 Player.hpp \
+		 lib.hpp
 CC=g++
-CFLAGS=-Wall -Wextra -I$(INCDIR) -std=c++98 -pedantic
+CFLAGS= -Wall -Wextra -I$(INCDIR) -g -std=c++98
+#CFLAGS+= -Werror
 LDFLAGS=
 
 SRC=$(SRCNAM:%=$(SRCDIR)/%)

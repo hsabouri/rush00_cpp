@@ -1,7 +1,19 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Window.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/01 10:04:27 by hsabouri          #+#    #+#             */
+/*   Updated: 2018/04/01 16:06:11 by hsabouri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <Window.hpp>
-#include <Bullet.hpp>
+#include <iostream>
+#include <ncurses.h>
+#include "Window.hpp"
+#include "Bullet.hpp"
 
 Window::Window(void) {
 }
@@ -16,10 +28,11 @@ Window &Window::operator=(const Window &src) {
 }
 
 Window::~Window(void) {
+	return ;
 }
 
 void Window::init(void) {
-	initscr();                                                       
+	initscr();
 	cbreak();
 	noecho();
 	nodelay(stdscr, true);
@@ -35,9 +48,13 @@ void Window::init_main_window(void) {
 }
 
 void Window::refresh(void) {
-	wrefresh(win);
+	wrefresh(this->win);
+}
+
+void Window::clear(void) {
+	wclear(this->win);
 }
 
 void Window::updateDisplay(int x, int y, const char *str) {
-	mvwprintw(win, x, y, str);
+	mvwprintw(this->win, y, x, str);
 }

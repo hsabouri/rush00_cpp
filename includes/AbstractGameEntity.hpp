@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 12:44:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 07:56:42 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 18:21:16 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class AbstractGameEntity {
 		AbstractGameEntity( void );
 		AbstractGameEntity( AbstractGameEntity const & src);
 		AbstractGameEntity & operator=( AbstractGameEntity const & rhs );
+		virtual ~AbstractGameEntity( void );
 
 		static int		width;
 		static int		height;
@@ -54,12 +55,12 @@ class AbstractGameEntity {
 
 		virtual void	myscroll( float amount );
 	private:
-		int oldX;
-		int oldY;
+		int				oldX;
+		int				oldY;
 		float			_xPos;
 		float			_yPos;
 		Status			_status;
-		char *	_skin;
+		char *			_skin;
 };
 
 #endif

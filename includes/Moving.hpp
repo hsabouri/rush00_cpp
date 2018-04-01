@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 14:48:35 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 07:56:55 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 14:29:56 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 class Moving : public AbstractGameEntity {
 
 	public:
-		Moving( float x, float y, char *skin, float xSpeed, float ySpeed, float max, float drag );
+		Moving( float x, float y, char *skin, float xSpeed, float ySpeed, float xmax, float ymax, float drag );
 		Moving( void );
 		Moving( Moving const & src);
+		virtual ~Moving( void );
 		Moving & operator=( Moving const & rhs );
 
 		float			getSpeedX( void ) const;
@@ -41,7 +42,8 @@ class Moving : public AbstractGameEntity {
 	private:
 		float		_xSpeed;
 		float		_ySpeed;
-		float		_maxSpeed;
+		float		_xMaxSpeed;
+		float		_yMaxSpeed;
 		float		_drag;
 };
 

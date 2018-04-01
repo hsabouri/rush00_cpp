@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 17:24:53 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 03:26:44 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 09:55:48 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Ennemy : public Moving {
 	public:
 		Ennemy( float x, float y, float xSpeed, float ySpeed );
 		Ennemy( void );
+		~Ennemy( void );
 		Ennemy( Ennemy const & src);
 		Ennemy & operator=( Ennemy const & rhs );
 

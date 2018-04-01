@@ -6,7 +6,7 @@
 /*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/31 13:40:08 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 07:56:26 by jde-maga         ###   ########.fr       */
+/*   Updated: 2018/04/01 18:25:23 by hsabouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 // Static attributes
 
-int		AbstractGameEntity::width = 40;
-int		AbstractGameEntity::height = 200;
+int		AbstractGameEntity::width = 200;
+int		AbstractGameEntity::height = 40;
 float	AbstractGameEntity::mult = 1;
 
 // Coplien
@@ -25,6 +25,10 @@ AbstractGameEntity::AbstractGameEntity( void ) :
 	_status(alive),
 	_skin((char *)".")
 {
+	return ;
+}
+
+AbstractGameEntity::~AbstractGameEntity( void ) {
 	return ;
 }
 
@@ -90,12 +94,27 @@ void			AbstractGameEntity::setPos( float x, float y ) {
 }
 
 void			AbstractGameEntity::modPos( float x, float y ) {
-	if (this->_xPos + x <= AbstractGameEntity::width && this->_xPos + x >= 0) {
+	if (this->_xPos + x > 2 || x > 0.0f) {
 		this->_xPos += x;
+	} else if (x < 0.0f) {
+		this->_xPos = 2;
 	}
-	if (this->_yPos + y <= AbstractGameEntity::height && this->_yPos + y >= 0) {
+	if (this->_xPos + x < AbstractGameEntity::width - 2 || x < 0.0f) {
+		this->_xPos += x;
+	} else if (x > 0.0f) {
+		this->_xPos = AbstractGameEntity::width - 2;
+	}
+	if (this->_yPos + y > 2 || y > 0.0f) {
 		this->_yPos += y;
+	} else if (y < 0.0f) {
+		this->_yPos = 2;
 	}
+	if (this->_yPos + y <= AbstractGameEntity::height - 2 || y < 0.0f) {
+		this->_yPos += y;
+	} else if (y > 0.0f) {
+		this->_yPos = AbstractGameEntity::height - 2;
+	}
+
 	return ;
 }
 
@@ -120,3 +139,4 @@ int				AbstractGameEntity::getOldX( void ) {
 int				AbstractGameEntity::getOldY( void ) {
 	return this->oldY;
 }
+
