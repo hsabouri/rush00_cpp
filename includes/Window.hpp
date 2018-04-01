@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Window.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 10:04:42 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 16:06:47 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/04/01 23:19:04 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ class Window {
 
 		void init();
 		void refresh();
-		void updateDisplay(int x, int y, const char *str);
+		void updateDisplay(int x, int y, const char *str, const char type);
 		void init_main_window();
+		void init_menu_window(void);
 		void clear(void);
+		void updateScore(size_t score);
+		void init_color();
 
 	private:
 		WINDOW *win;
+		WINDOW *menu;
 };
 
 #endif

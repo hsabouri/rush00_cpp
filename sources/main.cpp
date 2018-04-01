@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsabouri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jde-maga <jde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 10:07:01 by hsabouri          #+#    #+#             */
-/*   Updated: 2018/04/01 19:51:22 by hsabouri         ###   ########.fr       */
+/*   Updated: 2018/04/01 23:25:43 by jde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int main(void) {
 			int touched = enn->collide(bullets_buffer, last_bullet);
 			if (touched >= 0) {
 				score += 1;
+				win.updateScore(score);
 				delete_ennemy(ennemies_buffer, last_ennemy, i);
 				delete_bullet(bullets_buffer, last_bullet, touched);
 			}
@@ -80,20 +81,20 @@ int main(void) {
 			win.clear();
 			std::cout << std::endl;
 			usleep(100000);
-			std::cout << score << std::endl;
+			std::cout << "GAME OVER ! Score : " << score << std::endl;
 			std::exit(0);
 		}
 
 		// Update //////////////////////////////////////////////////////////////
 		win.clear();
-		win.updateDisplay(pl.getIntPosX(), pl.getIntPosY(), pl.getSkin());
+		win.updateDisplay(pl.getIntPosX(), pl.getIntPosY(), pl.getSkin(), 'p');
 		for (size_t i = 0; i < last_bullet; i++) {
 			Bullet *bul = bullets_buffer[i];
-			win.updateDisplay(bul->getIntPosX(), bul->getIntPosY(), bul->getSkin());
+			win.updateDisplay(bul->getIntPosX(), bul->getIntPosY(), bul->getSkin(), 'b');
 		}
 		for (size_t i = 0; i < last_ennemy; i++) {
 			Ennemy *enn = ennemies_buffer[i];
-			win.updateDisplay(enn->getIntPosX(), enn->getIntPosY(), enn->getSkin());
+			win.updateDisplay(enn->getIntPosX(), enn->getIntPosY(), enn->getSkin(), 'e');
 		}
 		
 		win.refresh();
